@@ -43,14 +43,8 @@ tasks.withType(Test) {
     }
 }
 
-task simple_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("simple")
+task yadro_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("yadro_test")
+        }
     }
-}
-
-task demoqa_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("submit_form")
-    }
-}
