@@ -22,7 +22,8 @@ public class YadroTests extends TestBase {
         @DisplayName("Открываем страницу Продукты и отображается строчка 'Новый импульс для развития бизнеса'")
         void productPageTest() {
             mainPage.openPage()
-                    .clickProductPage("Новый импульс для развития бизнеса");
+                    .clickProductPage()
+                    .productPageHeaderCheck("Новый импульс для развития бизнеса");
         }
 
         @Test

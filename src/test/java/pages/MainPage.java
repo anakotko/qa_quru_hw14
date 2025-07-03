@@ -12,7 +12,9 @@ public class MainPage {
 
     private SelenideElement companyLogo = $x("//img[contains(@class, 'tn-atom__img')]"),
             productPage = $(".yadro-tab1"),
+            headerProductPage=$("[field='tn_text_1542107067012']"),
             partnersPage = $(".yadro-tab3"),
+            headerPartnersPage=$("[field='tn_text_1539595369832']"),
             checkbutton = $("a[href='https://partners.yadro.com/?is_partner=true']");
 
     @Step("Открываем главную страницу")
@@ -31,9 +33,17 @@ public class MainPage {
         return this;
     }
 
-    @Step("Открываем страницу Продукты и отображается строчка 'Новый импульс для развития бизнеса'")
-    public MainPage clickProductPage(String value){
-        productPage.shouldHave(text(value));
+    @Step("Открываем страницу Продукты")
+    public MainPage clickProductPage(){
+        productPage.click();
+
+        return this;
+    }
+
+
+    @Step("Проверка заголовка 'Новый импульс для развития бизнеса' на странице Продукты")
+    public MainPage productPageHeaderCheck(String value){
+        headerProductPage.shouldHave(text(value));
 
         return this;
     }
@@ -47,7 +57,7 @@ public class MainPage {
 
     @Step("Проверка заголовка 'Партнерская экосистема' на странице Партнеры")
     public MainPage partnersPageHeaderCheck(String value){
-        partnersPage.shouldHave(text(value));
+        headerPartnersPage.shouldHave(text(value));
 
         return this;
     }
