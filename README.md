@@ -153,5 +153,5 @@ clean yadro_test
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" height="40" alt="Selenoid"> Видео с запуском тестов в Selenoid
 
 <p align="center">
-  <img src="media/screens/video_yadro.svg" width="600" alt="Selenoid Demo">
+  <img src="media/screens/video_yadro.gif" width="600" alt="Selenoid Demo">
 </p>
