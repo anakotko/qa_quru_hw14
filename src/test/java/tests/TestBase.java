@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -13,14 +14,15 @@ import java.util.Map;
 public class TestBase {
 
     @BeforeAll
-    static void setupConfig(){
+    static void setupConfig() {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser.version", "128.0");
         Configuration.browserSize = System.getProperty("browser.size", "1920x1080");
         Configuration.baseUrl = "https://yadro.com/";
         Configuration.pageLoadStrategy = "eager";
         String SELENOID_URL = System.getProperty("selenoid.url");
-        String SELENOID_LOGIN = System.getProperty("selenoid.login");;
+        String SELENOID_LOGIN = System.getProperty("selenoid.login");
+        ;
         String SELENOID_PASSWORD = System.getProperty("selenoid.password");
         Configuration.remote = "https://" + SELENOID_LOGIN + ":" + SELENOID_PASSWORD + "@" + SELENOID_URL + "/wd/hub";
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
@@ -36,10 +38,11 @@ public class TestBase {
     }
 
     @AfterEach
-    void addAttachments(){
+    void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        Selenide.closeWebDriver();
     }
 }

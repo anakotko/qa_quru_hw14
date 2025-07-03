@@ -31,21 +31,28 @@ public class MainPage {
         return this;
     }
 
-    @Step("Устанавливаем значение в поле Last Name")
+    @Step("Открываем страницу Продукты и отображается строчка 'Новый импульс для развития бизнеса'")
     public MainPage clickProductPage(String value){
         productPage.shouldHave(text(value));
 
         return this;
     }
 
-    @Step("Устанавливаем значение в поле Email")
-    public MainPage clickPartnersPage(String value){
-        partnersPage.setValue(value);
+    @Step("Открываем страницу Партнеры")
+    public MainPage clickPartnersPage(){
+        partnersPage.click();
 
         return this;
     }
 
-    @Step("Устанавливаем значение в поле Gender")
+    @Step("Проверка заголовка 'Партнерская экосистема' на странице Партнеры")
+    public MainPage partnersPageHeaderCheck(String value){
+        partnersPage.shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверяем наличие кнопки 'Стать партнером'")
     public MainPage buttonShouldBeVisible(String value){
         checkbutton.shouldHave(text(value)).shouldBe(visible).shouldBe(enabled);
 

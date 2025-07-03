@@ -21,20 +21,25 @@ public class YadroTests extends TestBase {
         @Tag("yadro_test")
         @DisplayName("Открываем страницу Продукты и отображается строчка 'Новый импульс для развития бизнеса'")
         void productPageTest() {
-            mainPage.clickProductPage("Новый импульс для развития бизнеса");
+            mainPage.openPage()
+                    .clickProductPage("Новый импульс для развития бизнеса");
         }
 
         @Test
         @Tag("yadro_test")
         @DisplayName("Открываем страницу Партнеры и видим заголовок 'Партнерская экосистема'")
         void partnersPageTest() {
-            mainPage.clickPartnersPage("Партнерская экосистема");
+            mainPage.openPage()
+                    .clickPartnersPage()
+                    .partnersPageHeaderCheck("Партнерская экосистема");
         }
 
         @Test
         @Tag("yadro_test")
         @DisplayName("Проверяем наличие кнопки 'Стать партнером'")
         void buttonShouldBeVisibleTest() {
-            mainPage.buttonShouldBeVisible("Стать партнером");
+            mainPage.openPage()
+                    .clickPartnersPage()
+                    .buttonShouldBeVisible("Стать партнером");
         }
     }
