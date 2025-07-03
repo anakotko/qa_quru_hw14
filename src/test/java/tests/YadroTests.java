@@ -43,4 +43,13 @@ public class YadroTests extends TestBase {
                     .clickPartnersPage()
                     .buttonShouldBeVisible("Стать партнером");
         }
+
+        @Test
+        @Tag("yadro_test")
+        @DisplayName("Открываем страницу Сервис и видим заголовок 'Программы поддержки'")
+        void servicePageTest() {
+            mainPage.openPage()
+                    .clickServicePage()
+                    .servicePageHeaderCheck("Программы поддержки");
+        }
     }

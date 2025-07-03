@@ -15,7 +15,9 @@ public class MainPage {
             headerProductPage=$("[field='tn_text_1542107067012']"),
             partnersPage = $(".yadro-tab3"),
             headerPartnersPage=$("[field='tn_text_1539595369832']"),
-            checkbutton = $("a[href='https://partners.yadro.com/?is_partner=true']");
+            checkbutton = $("a[href='https://partners.yadro.com/?is_partner=true']"),
+            servicePage = $(".yadro-tab4"),
+            headerServicePage=$(".color-blue text-center");
 
     @Step("Открываем главную страницу")
     public MainPage openPage(){
@@ -65,6 +67,21 @@ public class MainPage {
     @Step("Проверяем наличие кнопки 'Стать партнером'")
     public MainPage buttonShouldBeVisible(String value){
         checkbutton.shouldHave(text(value)).shouldBe(visible).shouldBe(enabled);
+
+        return this;
+    }
+
+
+    @Step("Открываем страницу Сервис")
+    public MainPage clickServicePage(){
+        servicePage.click();
+
+        return this;
+    }
+
+    @Step("Проверка заголовка 'Программы поддержки' на странице Сервис")
+    public MainPage servicePageHeaderCheck(String value){
+        headerServicePage.shouldHave(text(value));
 
         return this;
     }
