@@ -17,7 +17,7 @@ public class MainPage {
             headerPartnersPage=$("[field='tn_text_1539595369832']"),
             checkbutton = $("a[href='https://partners.yadro.com/?is_partner=true']"),
             servicePage = $(".yadro-tab4"),
-            headerServicePage=$(".color-blue text-center");
+            headerServicePage=$("h2.color-blue.text-center");
 
     @Step("Открываем главную страницу")
     public MainPage openPage(){
