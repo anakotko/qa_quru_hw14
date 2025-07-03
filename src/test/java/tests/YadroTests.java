@@ -19,7 +19,7 @@ public class YadroTests extends TestBase {
 
         @Test
         @Tag("yadro_test")
-        @DisplayName("Открываем страницу Продукты и отображается строчка 'Новый импульс для развития бизнеса'")
+        @DisplayName("Открываем страницу Продукты, отображается строчка 'Новый импульс для развития бизнеса'")
         void productPageTest() {
             mainPage.openPage()
                     .clickProductPage()
