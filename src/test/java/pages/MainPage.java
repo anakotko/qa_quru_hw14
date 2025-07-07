@@ -13,7 +13,8 @@ public class MainPage {
     private SelenideElement companyLogo = $x("//img[contains(@class, 'tn-atom__img')]"),
             productPage = $(".yadro-tab1"),
             partnersPage = $(".yadro-tab3"),
-            servicePage = $(".yadro-tab4");
+//            servicePage = $(".yadro-tab4");
+            servicePage = $("a[href='https://sp.yadro.com']").shouldHave(text("Сервис"));
 
     @Step("Открываем главную страницу")
     public MainPage openPage(){
