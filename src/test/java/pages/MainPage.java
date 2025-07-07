@@ -12,12 +12,8 @@ public class MainPage {
 
     private SelenideElement companyLogo = $x("//img[contains(@class, 'tn-atom__img')]"),
             productPage = $(".yadro-tab1"),
-            headerProductPage=$("[field='tn_text_1542107067012']"),
             partnersPage = $(".yadro-tab3"),
-            headerPartnersPage=$("[field='tn_text_1539595369832']"),
-            checkbutton = $("a[href='https://partners.yadro.com/?is_partner=true']"),
-            servicePage = $(".yadro-tab4"),
-            headerServicePage=$("h2.color-blue.text-center");
+            servicePage = $(".yadro-tab4");
 
     @Step("Открываем главную страницу")
     public MainPage openPage(){
@@ -42,14 +38,6 @@ public class MainPage {
         return this;
     }
 
-
-    @Step("Проверка заголовка 'Новый импульс для развития бизнеса' на странице Продукты")
-    public MainPage productPageHeaderCheck(String value){
-        headerProductPage.shouldHave(text(value));
-
-        return this;
-    }
-
     @Step("Открываем страницу Партнеры")
     public MainPage clickPartnersPage(){
         partnersPage.click();
@@ -57,31 +45,9 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка заголовка 'Партнерская экосистема' на странице Партнеры")
-    public MainPage partnersPageHeaderCheck(String value){
-        headerPartnersPage.shouldHave(text(value));
-
-        return this;
-    }
-
-    @Step("Проверяем наличие кнопки 'Стать партнером'")
-    public MainPage buttonShouldBeVisible(String value){
-        checkbutton.shouldHave(text(value)).shouldBe(visible).shouldBe(enabled);
-
-        return this;
-    }
-
-
     @Step("Открываем страницу Сервис")
     public MainPage clickServicePage(){
         servicePage.click();
-
-        return this;
-    }
-
-    @Step("Проверка заголовка 'Программы поддержки' на странице Сервис")
-    public MainPage servicePageHeaderCheck(String value){
-        headerServicePage.shouldHave(text(value));
 
         return this;
     }
