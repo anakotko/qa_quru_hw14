@@ -7,7 +7,7 @@ import pages.*;
 
 public class YadroTests extends TestBase {
 
-    MainPage mainPage=new MainPage();
+    MainPage mainPage = new MainPage();
     ProductPage productPage = new ProductPage();
     PartnersPage partnersPage = new PartnersPage();
     PartnersButtonPage partnersButtonPage = new PartnersButtonPage();
