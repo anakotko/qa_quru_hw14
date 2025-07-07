@@ -21,11 +21,11 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser.size", "1920x1080");
         Configuration.baseUrl = "https://yadro.com/";
         Configuration.pageLoadStrategy = "eager";
-//        String SELENOID_URL = System.getProperty("selenoid.url");
-//        String SELENOID_LOGIN = System.getProperty("selenoid.login");
-//        String SELENOID_PASSWORD = System.getProperty("selenoid.password");
-//        Configuration.remote = "https://" + SELENOID_LOGIN + ":" + SELENOID_PASSWORD + "@" + SELENOID_URL + "/wd/hub";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String SELENOID_URL = System.getProperty("selenoid.url");
+        String SELENOID_LOGIN = System.getProperty("selenoid.login");
+        String SELENOID_PASSWORD = System.getProperty("selenoid.password");
+        Configuration.remote = "https://" + SELENOID_LOGIN + ":" + SELENOID_PASSWORD + "@" + SELENOID_URL + "/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
